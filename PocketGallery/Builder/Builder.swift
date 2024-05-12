@@ -16,7 +16,7 @@ final class Builder: BuilderProtocol {
         let passcodeView = PasscodeView()
         let presenter = PasscodePresenter(view: passcodeView, passcodeState: .inputPasscode)
         passcodeView.passcodePresenter = presenter
-        
+
         return passcodeView
     }
 }

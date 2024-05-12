@@ -15,9 +15,13 @@
 		F7DFAC722BF0B1A3008CD39F /* Builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DFAC712BF0B1A3008CD39F /* Builder.swift */; };
 		F7DFAC752BF0B3AE008CD39F /* PasscodePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DFAC742BF0B3AE008CD39F /* PasscodePresenter.swift */; };
 		F7DFAC782BF0B9F7008CD39F /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DFAC772BF0B9F7008CD39F /* UIView.swift */; };
+		FA0F69995F0153DBD43FC150 /* Pods_PocketGallery.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DABC79AE10DDF3E199718F9 /* Pods_PocketGallery.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3581A1FC98771A0F04F81477 /* Pods-PocketGallery.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PocketGallery.release.xcconfig"; path = "Target Support Files/Pods-PocketGallery/Pods-PocketGallery.release.xcconfig"; sourceTree = "<group>"; };
+		3DABC79AE10DDF3E199718F9 /* Pods_PocketGallery.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PocketGallery.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C84E2CC5090E35DF89C0D3AC /* Pods-PocketGallery.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PocketGallery.debug.xcconfig"; path = "Target Support Files/Pods-PocketGallery/Pods-PocketGallery.debug.xcconfig"; sourceTree = "<group>"; };
 		F7DFAC552BF0B094008CD39F /* PocketGallery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PocketGallery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7DFAC582BF0B094008CD39F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F7DFAC5A2BF0B094008CD39F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -35,17 +39,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA0F69995F0153DBD43FC150 /* Pods_PocketGallery.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0C8F13FA878543639AA512F8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C84E2CC5090E35DF89C0D3AC /* Pods-PocketGallery.debug.xcconfig */,
+				3581A1FC98771A0F04F81477 /* Pods-PocketGallery.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		B95127D6F697C743AEA1ACAE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3DABC79AE10DDF3E199718F9 /* Pods_PocketGallery.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F7DFAC4C2BF0B094008CD39F = {
 			isa = PBXGroup;
 			children = (
 				F7DFAC572BF0B094008CD39F /* PocketGallery */,
 				F7DFAC562BF0B094008CD39F /* Products */,
+				0C8F13FA878543639AA512F8 /* Pods */,
+				B95127D6F697C743AEA1ACAE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -136,6 +160,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F7DFAC692BF0B098008CD39F /* Build configuration list for PBXNativeTarget "PocketGallery" */;
 			buildPhases = (
+				F79DECFA2BF0FB3E00D74CC4 /* ShellScript */,
+				B77D2439EF29886C5F0FDC25 /* [CP] Check Pods Manifest.lock */,
 				F7DFAC512BF0B094008CD39F /* Sources */,
 				F7DFAC522BF0B094008CD39F /* Frameworks */,
 				F7DFAC532BF0B094008CD39F /* Resources */,
@@ -193,6 +219,49 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B77D2439EF29886C5F0FDC25 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PocketGallery-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F79DECFA2BF0FB3E00D74CC4 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n${PODS_ROOT}/SwiftLint/swiftlint\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F7DFAC512BF0B094008CD39F /* Sources */ = {
@@ -259,7 +328,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -322,7 +391,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -343,6 +412,7 @@
 		};
 		F7DFAC6A2BF0B098008CD39F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C84E2CC5090E35DF89C0D3AC /* Pods-PocketGallery.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -355,6 +425,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -374,6 +445,7 @@
 		};
 		F7DFAC6B2BF0B098008CD39F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3581A1FC98771A0F04F81477 /* Pods-PocketGallery.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -386,6 +458,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
